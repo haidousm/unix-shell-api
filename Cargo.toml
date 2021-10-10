@@ -4,5 +4,11 @@ version = "1.0.0"
 edition = "2018"
 
 [dependencies]
-rocket = {version="0.5.0-rc.1", features=["json"]}
+rocket = {version="0.4.10"}
 serde = {version = "1.0", features = ["derive"]}
+rocket_cors = "0.5.1"
+
+[dependencies.rocket_contrib]
+version = "0.4.10"
+default-features = true
+features = ["json"]
