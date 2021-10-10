@@ -1,4 +1,4 @@
-FROM rust:1-alpine3.14 as compile-rust-service
+FROM rustlang/rust:nightly-alpine3.12 as compile-rust-service
 WORKDIR /app
 COPY . ./
 RUN apk add musl-dev protoc build-base && gcc resources/c/shell.c -o resources/c/shell && cargo build --release
