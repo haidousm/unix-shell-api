@@ -10,6 +10,7 @@ LABEL version="1.0.0"
 WORKDIR /app
 COPY --from=compile-rust-service --chown=nobody /app/target/release/unix-shell-api ./
 COPY --from=compile-rust-service --chown=nobody /app/resources ./resources
+RUN chown root -R /app/resources/demo-directory
 USER nobody
 ENV ROCKET_ADDRESS 0.0.0.0
 CMD ["./unix-shell-api"]
