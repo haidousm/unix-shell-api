@@ -50,8 +50,8 @@ fn main() {
         .allow_credentials(true);
 
     rocket::ignite()
-        .mount("/", routes![index])
-        .mount("/execute", routes![execute_cmd])
+        .mount("/api", routes![index])
+        .mount("/api/execute", routes![execute_cmd])
         .attach(cors.to_cors().unwrap())
         .launch();
 }
